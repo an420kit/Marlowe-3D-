@@ -37,6 +37,12 @@ nav span{color:var(--mute);margin-left:1.6rem}
 .btn{display:inline-block;pointer-events:auto;margin-top:1.4rem;padding:.8em 1.6em;border:1px solid var(--amber);color:var(--ink);border-radius:99px;text-decoration:none;font-size:.95rem}
 .btn:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
 @media (max-width:640px){.p2 .tag{position:static;text-align:left;margin-top:1rem}}
+
+/* Responsive canvas framing fix: keep the full car composition visible on phones and short screens */
+#cv{display:block;width:100%;height:100%;touch-action:pan-y}
+.stage{height:100svh;height:100dvh;min-height:520px}
+@media(max-width:640px){.stage{min-height:100svh} .p0{top:17vh;right:8vw}.p0 h1{font-size:clamp(2.2rem,10vw,3.4rem)}.p0 p{font-size:.9rem;max-width:25ch}.p1{bottom:12vh;max-width:80vw}.p2{bottom:9vh}.ghost{top:19vh;font-size:clamp(4rem,25vw,8rem)}.hint{bottom:3vh;font-size:.78rem}.bar{right:4vw;height:65px;margin-top:-32px}}
+@media(max-height:600px){.stage{min-height:100svh}.p0{top:14vh}.p0 h1{font-size:clamp(2rem,6vw,3.6rem)}.p0 p{margin-top:.6rem}.p1{bottom:11vh}.p2{bottom:7vh}}
 </style>
 </head>
 <body>
