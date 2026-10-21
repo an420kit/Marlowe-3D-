@@ -61,8 +61,8 @@ function draw(i){
   var k=i,m=null;while(k>=0&&!(imgs[k]&&imgs[k].complete&&imgs[k].naturalWidth))k--;
   if(k<0){k=i;while(k<N&&!(imgs[k]&&imgs[k].complete&&imgs[k].naturalWidth))k++}
   m=imgs[k];if(!m||!m.naturalWidth)return false;
-  var s=Math.max(W/m.naturalWidth,H/m.naturalHeight),w=m.naturalWidth*s,h=m.naturalHeight*s;
-  cx.drawImage(m,(W-w)/2,(H-h)/2,w,h);return true}
+  var s=Math.min(W/m.naturalWidth,H/m.naturalHeight),w=m.naturalWidth*s,h=m.naturalHeight*s;
+  cx.clearRect(0,0,W,H);cx.fillStyle='#050506';cx.fillRect(0,0,W,H);cx.drawImage(m,(W-w)/2,(H-h)/2,w,h);return true}
 function load(i){if(i>=N)return;var im=new Image();im.onload=im.onerror=function(){cur=-1;load(i+4)};im.src=F[i];imgs[i]=im}
 [0,1,2,3].forEach(load);
 var hero=document.getElementById('hero'),TP=0,P=0;
